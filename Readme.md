@@ -1,68 +1,82 @@
-[`Introducción a Bases de Datos`](../../Readme.md) > [`Sesión 01`](../Readme.md) > `Ejemplo 02`
-
-## Ejemplo 2: Estructura de una tabla
+[`Introducción a Bases de Datos`](../../Readme.md) > [`Sesión 01`](../Readme.md) > `Ejercicios`
+	
+## Ejercicios Sesión 1
 
 <div style="text-align: justify;">
 
 ### 1. Objetivos :dart:
 
-- Listar las bases de datos (esquemas) en un servidor de bases de datos y a conectarse a las mismas.
-- Listar las tablas dentro de un esquema.
-- Usar la instrucción `DESCRIBE` para mostrar la estructura de una tabla y los tipos de datos de sus campos.
+- Aplicar los conceptos adquiridos durante la sesión.
 
 ### 2. Requisitos :clipboard:
 
-1. Conexión al servidor de bases de datos que se configuró en el Ejemplo 1.
-2. MySQL Workbench instalado.
+1. MySQL Workbench instalado y conectado al servidor del curso.
 
 ### 3. Desarrollo :rocket:
 
-1. Una vez realizada la conexión al servidor de bases de datos, se tiene la siguiente pantalla dentro de Workbench. En ella se muestra un editor de texto llamado *Query 1*.
+**En esta serie de ejercicios aplicarás los conceptos adquiridos durante la sesión:**
 
-   ![imagen](imagenes/s1we21.png)
+- Descripción de tablas  
+- Consulta de los campos de una tabla  
+- Cláusula WHERE  
+- Operadores relacionales  
+- Operadores lógicos  
+- Cláusula ORDER BY  
+- Cláusula LIMIT  
 
-2. En este editor, listaremos las bases de datos disponibles en el servidor. Para listar las bases de datos del servidor usamos el siguiente comando:
+Todas las consultas que realices deberás mantenerlas dentro del editor de textos de MySQL Workbench. Al finalizar, guarda este archivo, llendo al menú `File` > `Save script`. Recuerda que para hacer consultas a una tabla debes conocer primero su estructura.
 
-   ```sql
-   SHOW DATABASES;
-   ```
-   
-   Para ejecutarlo, usa `Ctrl+Enter` o da clic sobre el ícono del rayito. :zap:, de esta forma ejecutaremos todos los comentos. 
+**Deberás entregar el archivo `.sql` correspondiente**
 
-   En este caso, se mostrarán las siguientes bases:
-   
-   ![imagen](imagenes/s1we22.png)
+1. Dentro del mismo servidor de bases de datos, conéctate al esquema `classicmodels`.
 
-3. La base de datos `tienda` fue creada por nosotros, mientras que el resto de bases de datos son parte del Sistema Gestor de Bases de Datos y no las usaremos de momento.
+2. Dentro de la tabla `employees`, obtén el apellido de todos los empleados.
 
-   Nos conectaremos a la base de datos `tienda`. Para hacer eso, usa el siguiente comando:
+3. Dentro de la tabla `employees`, obtén el apellido, nombre y puesto de todos los empleados.
 
-   ```sql
-   USE tienda;
-   ```
- 
-   ![imagen](imagenes/s1we23.png)
+4. Dentro de la tabla `employees`, obtén todos los datos de cada empleado.
 
-4. La tabla que se muestra abajo del editor, indica que nos hemos conectado a la base de datos `tienda`. Ahora podemos listar las bases de datos contenidas en el esquema. Para ello, usa el siguiente comando:
+5. Dentro de la tabla `employees`, obtén el apellido, nombre y puesto de todos los empleados que tengan el puesto `Sales Rep`.
 
-   ```sql
-   SHOW TABLES;
-   ```
+6. Dentro de la tabla `employees`, obtén el apellido, nombre, puesto y código de oficina de todos los empleados que tengan el puesto `Sales Rep` y código de oficina `1`.
 
-   ![imagen](imagenes/s1we24.png)
+7. Dentro de la tabla `employees`, obtén el apellido, nombre, puesto y código de oficina de todos los empleados que tengan el puesto `Sales Rep` o código de oficina `1`.
 
-5. Veamos, por ejemplo, cuál es la estructura de la tabla `empleado`. Para ello usa el siguiente comando:
+8. Dentro de la tabla `employees`, obtén el apellido, nombre y código de oficina de todos los empleados que tenga código de oficina `1`, `2` o `3`.
 
-   ```sql
-   DESCRIBE empleado;
-   ```
-   
-   Observa el nombre de los campos y el tipo de dato que tienen. Recuerda, el tipo `int` indica que el campo almacena un dato numérico, mientras que el tipo `varchar` indica que los datos son cadenas de caracteres.
+9. Dentro de la tabla `employees`, obten el apellido, nombre y puesto de todos los empleados que tengan un puesto distinto a `Sales Rep`.
 
-   ![imagen](imagenes/s1we25.png)
+10. Dentro de la tabla `employees`, obtén el apellido, nombre y código de oficina de todos los empleados cuyo código de oficina sea mayor a `5`.
 
-   La instrucción `DESCRIBE` es tu amiga. La usaremos cada que necesitamos consultar los registros de una tabla, pues nos permitirá saber qué campos tiene y su tipo.
+11. Dentro de la tabla `employees`, obtén el apellido, nombre y código de oficina de todos los empleados cuyo cdigo de oficina sea menor o igual `4`.
 
-[`Anterior`](../Readme.md#estructura-de-una-tabla) | [`Siguiente`](../Reto-01/Readme.md)
+12. Dentro de la tabla `customers`, obtén el nombre, país y estado de todos los clientes cuyo país sea `USA` y cuyo estado sea `CA`.
 
-<div style="text-align: justify;">
+13. Dentro de la tabla `customers`, obtén el nombre, país, estado y límite de crédito de todos los clientes cuyo país sea, `USA`, cuyo estado sea `CA` y cuyo límite de crédito sea mayor a `100000`.
+
+14. Dentro de la tabla `customers`, obtén el nombre y país de todos los clientes cuyo país sea `USA` o `France`.
+
+15. Dentro de la tabla `customers`, obtén el nombre, pas y límite de crédito de todos los clientes cuyo país sea `USA` o `France` y cuyo límite de crédito sea mayor a `100000`. Para este ejercicio ten cuidado con los paréntesis.
+
+16. Dentro de la tabla `offices`, obtén el código de la oficina, ciudad, teléfono y país de aquellas oficinas que se encuentren en `USA` o `France`.
+
+17. Dentro de la tabla `offices`, obtén el código de la oficina, ciudad, teléfono y país de aquellas oficinas que *no* se encuentren en `USA` o `France`.
+
+18. Dentro de la tabla `orders`, obtén el número de orden, número de cliente, estado y fecha de envío de todas las órdenes con el número `10165`, `10287` o `10310`.
+
+19. Dentro de la tabla `customers`, obtén el apellido de contacto y nombre de cada cliente y ordena los resultados por apellido de forma ascendente.
+
+20. Dentro de la tabla `customers`, obtén el apellido de contacto y nombre de cada cliente y ordena los resultados por apellido de forma descendente.
+
+21. Dentro de la tabla `customers`, obtén el apellido y nombre de cada cliente y ordena los resultados por apellido de forma descendente y luego por nombre de forma ascendente.
+
+22. Dentro de la tabla `customers`, obtén el número de cliente, nombre de cliente y el límite de crédito de los cinco clientes con el límite de crédito más alto (top 5).
+
+23. Dentro de la tabla `customers`, obtén el número de cliente, nombre de cliente y el límite de crédito de los cinco clientes con el límite de crédito más bajo diferente de 0.
+
+**¡¡¡MUCHA SUERTE!!!**
+
+
+[`Anterior`](../Readme.md#3-proyecto-hammer) | [`Siguiente`](../Readme.md#4-postwork-memo)
+
+</div>
